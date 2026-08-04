@@ -1,0 +1,83 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 F240 1023       MOV              R0, #0x123
+   12 00000004 F04F 017B       MOV              R1, #0123
+   13 00000008 F04F 32FF       MOV              R2, #-1
+   14 0000000C F04F 03AA       MOV              R3, #2_10101010
+   15 00000010 F04F 047E       MOV              R4, #8_176
+   16 00000014         STOP
+   17 00000014 E7FE            B                STOP
+   18 00000016                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=FirstARM
+.d -oFirstARM.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\AR
+M\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=FirstARM.lst FirstARM.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file FirstARM.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file FirstARM.asm
+   Uses
+      At line 2 in file FirstARM.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file FirstARM.asm
+   Uses
+      At line 5 in file FirstARM.asm
+      At line 9 in file FirstARM.asm
+
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 16 in file FirstARM.asm
+   Uses
+      At line 17 in file FirstARM.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file FirstARM.asm
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+336 symbols in table

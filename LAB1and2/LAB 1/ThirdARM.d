@@ -1,0 +1,1 @@
+ThirdARM.o: ThirdARM.s

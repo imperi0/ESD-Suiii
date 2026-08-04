@@ -1,0 +1,113 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4B03            LDR              R3,=DST
+   12 00000002         ;LDR R2,=SRC
+   13 00000002 4804            LDR              R0,=0x12345678
+   14 00000004 4904            LDR              R1,=0xABCDEF12
+   15 00000006 4604            MOV              R4, R0
+   16 00000008 6018            STR              R0, [R3]
+   17 0000000A 6059            STR              R1, [R3, #4]
+   18 0000000C E7FE    STOP    B                STOP
+   19 0000000E 00 00 00000000 
+              12345678 
+              ABCDEF12         AREA             mydata, DATA, READWRITE
+   20 00000000 00000000 
+                       DST     DCD              0
+                       
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=SecondAR
+M.d -oSecondARM.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\
+ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=SecondARM.lst SecondARM.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file SecondARM.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file SecondARM.s
+   Uses
+      At line 2 in file SecondARM.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file SecondARM.s
+   Uses
+      At line 5 in file SecondARM.s
+      At line 9 in file SecondARM.s
+
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 18 in file SecondARM.s
+   Uses
+      At line 18 in file SecondARM.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file SecondARM.s
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 20 in file SecondARM.s
+   Uses
+      At line 11 in file SecondARM.s
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 19 in file SecondARM.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+340 symbols in table

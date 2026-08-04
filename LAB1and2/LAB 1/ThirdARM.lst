@@ -1,0 +1,121 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4B06            LDR              R3,=DST
+   12 00000002 4A07            LDR              R2,=SRC
+   13 00000004 6810            LDR              R0, [R2]
+   14 00000006 6851            LDR              R1, [R2, #4]
+   15 00000008 6018            STR              R0, [R3]
+   16 0000000A 6059            STR              R1, [R3, #4]
+   17 0000000C E7FE    STOP    B                STOP
+   18 0000000E 00 00 ABACAD12 
+              0000CD12 
+              005768CA SRC     DCD              0xABACAD12, 0xCD12, 0x5768CA
+   19 0000001C 00000000 
+              00000000         AREA             mydata, DATA, READWRITE
+   20 00000000 00000000 
+                       DST     DCD              0
+                       
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=ThirdARM
+.d -oThirdARM.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\AR
+M\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=ThirdARM.lst ThirdARM.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file ThirdARM.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file ThirdARM.s
+   Uses
+      At line 2 in file ThirdARM.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file ThirdARM.s
+   Uses
+      At line 5 in file ThirdARM.s
+      At line 9 in file ThirdARM.s
+
+SRC 00000010
+
+Symbol: SRC
+   Definitions
+      At line 18 in file ThirdARM.s
+   Uses
+      At line 12 in file ThirdARM.s
+Comment: SRC used once
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 17 in file ThirdARM.s
+   Uses
+      At line 17 in file ThirdARM.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file ThirdARM.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 20 in file ThirdARM.s
+   Uses
+      At line 11 in file ThirdARM.s
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 19 in file ThirdARM.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+341 symbols in table
