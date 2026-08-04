@@ -1,0 +1,2 @@
+Dependencies for Project 'SUMof2numbers', Target 'Target 1': (DO NOT MODIFY !)
+F (.\SUMof2numbers.s)(0x6A717121)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "SUMof2numbers.lst" --xref -o "SUMof2numbers.o" --depend "SUMof2numbers.d")

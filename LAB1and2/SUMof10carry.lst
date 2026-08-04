@@ -1,0 +1,150 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008                 ALIGN
+    8 00000008         
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         
+   13 00000000         Reset_Handler
+   14 00000000 4810            LDR              R0,=SRC
+   15 00000002         ; LDR R3,=DST
+   16 00000002 F04F 0100       MOV              R1, #0
+   17 00000006 F04F 030A       MOV              R3, #10
+   18 0000000A         
+   19 0000000A         UP
+   20 0000000A F850 2B04       LDR              R2, [R0], #4
+   21 0000000E 1889            ADDS             R1, R2
+   22 00000010 F144 0400       ADC              R4, #0
+   23 00000014 F1A3 0301       SUB              R3, #1
+   24 00000018 D1F7            BNE              UP
+   25 0000001A         
+   26 0000001A         STOP
+   27 0000001A E7FE            B                STOP
+   28 0000001C         
+   29 0000001C FFFFFFFF 
+              11111111 
+              11111111 
+              11111111 
+              11111111 
+              11111111 
+              11111111 
+              11111111 
+              11111111 
+              11111111 SRC     DCD              0xFFFFFFFF, 0x11111111, 0x11111
+111, 0x11111111, 0x11111111, 0x11111111, 0x11111111, 0x11111111, 0x11111111, 0x
+11111111
+   30 00000044 00000000        AREA             mydata, DATA, READWRITE
+   31 00000000         
+   32 00000000 00000000 
+                       DST     DCD              0
+   33 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=SUMof10c
+arry.d -oSUMof10carry.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:
+\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=SUMof10carry.lst S
+UMof10carry.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file SUMof10carry.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file SUMof10carry.s
+   Uses
+      At line 2 in file SUMof10carry.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 13 in file SUMof10carry.s
+   Uses
+      At line 6 in file SUMof10carry.s
+      At line 11 in file SUMof10carry.s
+
+SRC 0000001C
+
+Symbol: SRC
+   Definitions
+      At line 29 in file SUMof10carry.s
+   Uses
+      At line 14 in file SUMof10carry.s
+Comment: SRC used once
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 26 in file SUMof10carry.s
+   Uses
+      At line 27 in file SUMof10carry.s
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 19 in file SUMof10carry.s
+   Uses
+      At line 24 in file SUMof10carry.s
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file SUMof10carry.s
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 32 in file SUMof10carry.s
+   Uses
+      None
+Comment: DST unused
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 30 in file SUMof10carry.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table

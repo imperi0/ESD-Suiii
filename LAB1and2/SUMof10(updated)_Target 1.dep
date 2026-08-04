@@ -1,0 +1,2 @@
+Dependencies for Project 'SUMof10(updated)', Target 'Target 1': (DO NOT MODIFY !)
+F (.\SUMof10(updated).s)(0x6A716576)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "SUMof10(updated).lst" --xref -o "SUMof10(updated).o" --depend "SUMof10(updated).d")

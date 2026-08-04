@@ -1,0 +1,2 @@
+Dependencies for Project 'W2Q1main', Target 'Target 1': (DO NOT MODIFY !)
+F (.\w2Q1main.s)(0x6A715FF7)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "w2Q1main.lst" --xref -o "w2Q1main.o" --depend "w2Q1main.d")

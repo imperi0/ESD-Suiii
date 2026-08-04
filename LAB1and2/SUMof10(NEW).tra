@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'SUMof10(NEW).tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"sumof10carry.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "sumof10carry.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\SUMof10(NEW).map" -o SUMof10(NEW).axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'SUMof10(NEW).axf'
+### ADS-LD Command File: 'SUMof10(NEW).lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'SUMof10(NEW).lnp', Handle=0x00000790
+### Writing '.lnp' file
+### ADS-LD Command file 'SUMof10(NEW).lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
