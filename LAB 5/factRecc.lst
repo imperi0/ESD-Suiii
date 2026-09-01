@@ -1,0 +1,152 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         
+   13 00000000         Reset_Handler
+   14 00000000         
+   15 00000000 480D            LDR              R0,=NUM
+   16 00000002 6801            LDR              R1,[R0]
+   17 00000004 F8DF D034       LDR              R13,=0x10001000
+   18 00000008 F000 F803       BL               FACT1
+   19 0000000C 4D0C            LDR              R5,=FACT
+   20 0000000E 602A            STR              R2,[R5]
+   21 00000010         
+   22 00000010         STOP
+   23 00000010 E7FE            B                STOP
+   24 00000012         
+   25 00000012         FACT1
+   26 00000012 2901            CMP              R1,#1
+   27 00000014 D00B            BEQ              EXIT
+   28 00000016 B402            PUSH             {R1}
+   29 00000018 B500            PUSH             {R14}
+   30 0000001A F1A1 0101       SUB              R1,#1
+   31 0000001E F7FF FFF8       BL               FACT1
+   32 00000022 F85D EB04       POP              {R14}
+   33 00000026 BC02            POP              {R1}
+   34 00000028 FB01 F202       MUL              R2, R1, R2
+   35 0000002C 4770            BX               LR
+   36 0000002E         
+   37 0000002E         EXIT
+   38 0000002E F04F 0201       MOV              R2, #1
+   39 00000032 4770            BX               LR
+   40 00000034         
+   41 00000034 00000005 
+                       NUM     DCD              5
+   42 00000038 00000000 
+              10001000 
+              00000000         AREA             mycode, DATA, READWRITE
+   43 00000044 00000000 
+                       FACT    DCD              0
+                       
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=factRecc
+.d -ofactRecc.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\AR
+M\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=factRecc.lst factRecc.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file factRecc.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file factRecc.s
+   Uses
+      At line 2 in file factRecc.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXIT 0000002E
+
+Symbol: EXIT
+   Definitions
+      At line 37 in file factRecc.s
+   Uses
+      At line 27 in file factRecc.s
+Comment: EXIT used once
+FACT 00000044
+
+Symbol: FACT
+   Definitions
+      At line 43 in file factRecc.s
+   Uses
+      At line 19 in file factRecc.s
+Comment: FACT used once
+FACT1 00000012
+
+Symbol: FACT1
+   Definitions
+      At line 25 in file factRecc.s
+   Uses
+      At line 18 in file factRecc.s
+      At line 31 in file factRecc.s
+
+NUM 00000034
+
+Symbol: NUM
+   Definitions
+      At line 41 in file factRecc.s
+   Uses
+      At line 15 in file factRecc.s
+Comment: NUM used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 13 in file factRecc.s
+   Uses
+      At line 6 in file factRecc.s
+      At line 11 in file factRecc.s
+
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 22 in file factRecc.s
+   Uses
+      At line 23 in file factRecc.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file factRecc.s
+   Uses
+      None
+Comment: mycode unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+342 symbols in table

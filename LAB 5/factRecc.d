@@ -1,0 +1,1 @@
+factRecc.o: factRecc.s
